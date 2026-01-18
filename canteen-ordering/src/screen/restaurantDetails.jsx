@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { useGetResaturantData } from "../Hook";
-import { dummyImage } from ".../components/RestaurantCard";
+import { useGetResaturantData } from "../Hooks";
+import { dummyImage } from "../components/RestaurantCard";
 import { addItemsInCart } from "../Store/app";
 
 const RestaurantDetails = () => {
