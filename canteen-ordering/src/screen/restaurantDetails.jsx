@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useGetResaturantData } from "../Hooks";
 import { dummyImage } from "../components/RestaurantCard";
 import { addItemsInCart } from "../Store/app";
+
+// Toast Component positioned under cart
+const Toast = ({ message, onClose }) => {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 3000);
+    return () => clearTimeout(timer);
+  }, [onClose]);
+
+  return (
+    <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-6 py-4 rounded-2xl shadow-2xl z-50 flex items-center space-x-3 border-2 border-green-400 animate-slide-up">
+      <span className="text-xl">✅</span>
+      <span className="font-medium">{message}</span>
+    </div>
+  );
+};
 
 const RestaurantDetails = () => {
   const dispatch = useDispatch();
@@ -11,19 +26,40 @@ const RestaurantDetails = () => {
   const { id } = useParams();
 
   const allRestaurantData = useSelector((state) => state.app.restaurantData);
+  const cartData = useSelector((state) => state.app.cartData);
 
   const restaurantData = allRestaurantData.find((data) => data.id === id);
 
-  const [imageUri, setImageUri] = useState(restaurantData?.image_url ?? "");
+  // Calculate total cart items
+  const totalCartItems = cartData?.reduce((total, restaurant) => {
+    return total + restaurant.menuItems.reduce((sum, item) => sum + item.quantity, 0);
+  }, 0) || 0;
+
+  const [imageUri, setImageUri] = useState(() => {
+    return restaurantData?.image_url || dummyImage[0] || "https://picsum.photos/800/600?random=fallback";
+  });
+
+  // Toast state
+  const [toast, setToast] = useState(null);
 
   function handleImageError() {
-    const idx = Math.floor(Math.random() * (dummyImage.length - 1));
+    const idx = Math.floor(Math.random() * dummyImage.length);
     setImageUri(dummyImage[idx]);
+  }
+
+  function handleMenuImageError(itemId) {
+    const idx = Math.floor(Math.random() * dummyImage.length);
+    // For menu items, we could update the item image, but for now let's just use a fallback
+    return dummyImage[idx];
   }
 
   function handleClick(itemId) {
     dispatch(addItemsInCart({ resId: id, item_id: itemId }));
+    // Show success toast
+    setToast(`Item added to cart! (${totalCartItems + 1} items)`);
   }
+
+  const closeToast = () => setToast(null);
 
   if (!restaurantData)
     return (
@@ -37,19 +73,23 @@ const RestaurantDetails = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="w-full bg-white shadow-md sticky top-0 z-10">
+      <nav className="w-full bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 shadow-2xl sticky top-0 z-50 border-b-2 border-blue-400/30 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
           <Link to="/">
-            <h1 className="text-2xl font-bold text-orange-500 tracking-wide">
+            <h1 className="text-2xl font-bold text-white tracking-wide drop-shadow-lg">
               🍽️ Canteen
             </h1>
           </Link>
 
-          <Link
-            to="/cart"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
-          >
-            Cart
+          <Link to="/cart" className="relative">
+            <button className="bg-transparent hover:bg-white/10 backdrop-blur-md text-white p-3 rounded-xl text-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl border border-white/20 hover:border-white/40 relative z-10">
+              🛒
+            </button>
+            {totalCartItems > 0 && (
+              <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-400 to-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-lg border-2 border-white animate-pulse z-20">
+                {totalCartItems > 99 ? '99+' : totalCartItems}
+              </span>
+            )}
           </Link>
         </div>
       </nav>
@@ -94,6 +134,10 @@ const RestaurantDetails = () => {
                 <img
                   src={item.image}
                   alt={item.name}
+                  onError={(e) => {
+                    const idx = Math.floor(Math.random() * dummyImage.length);
+                    e.target.src = dummyImage[idx];
+                  }}
                   className="w-28 h-24 object-cover rounded-lg"
                 />
 
@@ -115,7 +159,7 @@ const RestaurantDetails = () => {
                     onClick={() => {
                       handleClick(item.item_id);
                     }}
-                    className="self-start mt-2 bg-orange-500 hover:bg-orange-600 text-white text-sm px-4 py-2 rounded-lg transition-all duration-300"
+                    className="self-start mt-2 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-700 text-white text-sm px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-semibold border border-blue-400"
                   >
                     Add to Cart
                   </button>
@@ -132,6 +176,9 @@ const RestaurantDetails = () => {
           </p>
         )}
       </div>
+
+      {/* Toast Notification */}
+      {toast && <Toast message={toast} onClose={closeToast}></Toast>}
     </div>
   );
 };

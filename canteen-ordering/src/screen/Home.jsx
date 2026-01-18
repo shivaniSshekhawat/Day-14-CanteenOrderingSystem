@@ -7,21 +7,31 @@ import RestaurantCard from "../components/RestaurantCard";
 const Home = () => {
   useGetResaturantData();
   const restaurantData = useSelector((state) => state.app.restaurantData);
+  const cartData = useSelector((state) => state.app.cartData);
+
+  // Calculate total cart items
+  const totalCartItems = cartData?.reduce((total, restaurant) => {
+    return total + restaurant.menuItems.reduce((sum, item) => sum + item.quantity, 0);
+  }, 0) || 0;
 
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
-      <nav className="w-full bg-white shadow-md sticky top-0 z-10">
+      <nav className="w-full bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 shadow-2xl sticky top-0 z-50 border-b-2 border-blue-400/30 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-orange-500 tracking-wide">
+          <h1 className="text-2xl font-bold text-white tracking-wide drop-shadow-lg">
             🍽️ Canteen
           </h1>
 
-          <Link
-            to="/cart"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300"
-          >
-            Cart
+          <Link to="/cart" className="relative">
+            <button className="bg-transparent hover:bg-white/10 backdrop-blur-md text-white p-3 rounded-xl text-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl border border-white/20 hover:border-white/40 relative z-10">
+              🛒
+            </button>
+            {totalCartItems > 0 && (
+              <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-400 to-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-lg border-2 border-white animate-pulse z-20">
+                {totalCartItems > 99 ? '99+' : totalCartItems}
+              </span>
+            )}
           </Link>
         </div>
       </nav>
