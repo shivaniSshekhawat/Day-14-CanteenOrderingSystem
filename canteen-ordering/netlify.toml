@@ -1,5 +1,4 @@
 [build]
-  base = "canteen-ordering"
   publish = "dist"
   command = "npm run build"
 
