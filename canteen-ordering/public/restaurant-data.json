@@ -1,0 +1,257 @@
+{
+  "_IMPORTANT_LEGAL_DISCLAIMER": "🚨 LEGAL NOTICE: This is 100% FICTIONAL data created solely for educational and learning purposes. All content is completely made up and not based on real restaurants or businesses. This project is for Redux Toolkit and React learning only.",
+  "_COPYRIGHT_NOTICE": "🎯 ALL IMAGES ARE FROM UNSPLASH.COM - 100% FREE for personal and commercial use. No copyright violations. License: https://unsplash.com/license",
+  "_EDUCATIONAL_PURPOSE_ONLY": "📚 This JSON file contains completely fictional restaurant and menu data for learning React/Redux concepts. Do NOT use for any commercial purposes.",
+  "_CREATED_FOR": "React + Redux Toolkit Learning Project - Canteen Ordering System Demo",
+  "_LAST_UPDATED": "2025-01-19",
+  "_DATA_TYPE": "PURE VEGETARIAN FOOD ONLY - No meat, fish, or animal products in any dish",
+
+  "restaurants": [
+    {
+      "id": "veg_learn_001",
+      "name": "Green Leaf Café",
+      "rating": 4.7,
+      "cuisine": "Pure Vegetarian",
+      "address": "123 Learning Street, Code City, 12345",
+      "delivery_time": "20-25 mins",
+      "image_url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800",
+      "menu": [
+        {
+          "item_id": "veg_learn_001_m01",
+          "name": "Quinoa Buddha Bowl",
+          "description": "Nutritious quinoa bowl with roasted vegetables, avocado, and tahini dressing - perfect for learning healthy eating",
+          "price": 185.00,
+          "category": "Healthy Bowls",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400"
+        },
+        {
+          "item_id": "veg_learn_001_m02",
+          "name": "Mediterranean Salad",
+          "description": "Fresh mixed greens with cherry tomatoes, cucumber, olives, and feta cheese - a coding session favorite",
+          "price": 145.00,
+          "category": "Salads",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400"
+        },
+        {
+          "item_id": "veg_learn_001_m03",
+          "name": "Paneer Tikka Masala",
+          "description": "Creamy tomato-based curry with grilled paneer cubes and aromatic spices - React developer's delight",
+          "price": 195.00,
+          "category": "Curry Dishes",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae391?w=400"
+        }
+      ]
+    },
+    {
+      "id": "veg_learn_002",
+      "name": "Code & Curry Kitchen",
+      "rating": 4.5,
+      "cuisine": "South Indian Vegetarian",
+      "address": "456 Developer Avenue, Tech Park, 67890",
+      "delivery_time": "15-20 mins",
+      "image_url": "https://images.unsplash.com/photo-1639024471283-03518883512d?w=800",
+      "menu": [
+        {
+          "item_id": "veg_learn_002_m01",
+          "name": "Idli Sambar Combo",
+          "description": "Steamed rice cakes served with lentil stew and coconut chutney - traditional South Indian breakfast",
+          "price": 85.00,
+          "category": "Breakfast",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1639024471283-03518883512d?w=400"
+        },
+        {
+          "item_id": "veg_learn_002_m02",
+          "name": "Vegetable Biryani",
+          "description": "Fragrant basmati rice cooked with seasonal vegetables and authentic spices - programmer's comfort food",
+          "price": 165.00,
+          "category": "Rice Dishes",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1563379091339-03246963d4ad?w=400"
+        },
+        {
+          "item_id": "veg_learn_002_m03",
+          "name": "Chana Masala",
+          "description": "Spicy chickpea curry with tomatoes, onions, and traditional spices - Redux state management approved",
+          "price": 135.00,
+          "category": "Main Course",
+          "is_vegetarian": true,
+          "is_spicy": true,
+          "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400"
+        }
+      ]
+    },
+    {
+      "id": "veg_learn_003",
+      "name": "Redux Bites Café",
+      "rating": 4.8,
+      "cuisine": "Modern Vegetarian",
+      "address": "789 State Management Blvd, Data City, 11223",
+      "delivery_time": "25-30 mins",
+      "image_url": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=800",
+      "menu": [
+        {
+          "item_id": "veg_learn_003_m01",
+          "name": "Avocado Toast Bowl",
+          "description": "Smashed avocado on multigrain bread with cherry tomatoes and microgreens - Silicon Valley style",
+          "price": 175.00,
+          "category": "Modern Fusion",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400"
+        },
+        {
+          "item_id": "veg_learn_003_m02",
+          "name": "Caprese Pasta",
+          "description": "Penne pasta with fresh mozzarella, tomatoes, basil, and olive oil - Italian meets Redux",
+          "price": 205.00,
+          "category": "Pasta",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=400"
+        },
+        {
+          "item_id": "veg_learn_003_m03",
+          "name": "Berry Smoothie Bowl",
+          "description": "Mixed berries, banana, yogurt topped with granola and chia seeds - healthy coding fuel",
+          "price": 155.00,
+          "category": "Healthy",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=400"
+        }
+      ]
+    },
+    {
+      "id": "veg_learn_004",
+      "name": "Hook & Fork Bistro",
+      "rating": 4.6,
+      "cuisine": "Fusion Vegetarian",
+      "address": "321 Component Street, React City, 44556",
+      "delivery_time": "18-22 mins",
+      "image_url": "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=800",
+      "menu": [
+        {
+          "item_id": "veg_learn_004_m01",
+          "name": "Falafel Wrap Supreme",
+          "description": "Crispy chickpea patties in whole wheat wrap with tahini sauce and pickled vegetables",
+          "price": 145.00,
+          "category": "Middle Eastern Fusion",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=400"
+        },
+        {
+          "item_id": "veg_learn_004_m02",
+          "name": "Vegetarian Pizza Margherita",
+          "description": "Thin crust pizza with tomato sauce, mozzarella, fresh basil, and olive oil - classic Italian",
+          "price": 225.00,
+          "category": "Pizza",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400"
+        },
+        {
+          "item_id": "veg_learn_004_m03",
+          "name": "Stuffed Bell Peppers",
+          "description": "Bell peppers filled with quinoa, black beans, corn, and Mexican spices - useState approved",
+          "price": 185.00,
+          "category": "Stuffed Vegetables",
+          "is_vegetarian": true,
+          "is_spicy": true,
+          "image": "https://images.unsplash.com/photo-1563379091339-03246963d4ad?w=400"
+        }
+      ]
+    },
+    {
+      "id": "veg_learn_005",
+      "name": "State Street Diner",
+      "rating": 4.4,
+      "cuisine": "American Vegetarian",
+      "address": "654 Props Avenue, Component City, 77889",
+      "delivery_time": "20-25 mins",
+      "image_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800",
+      "menu": [
+        {
+          "item_id": "veg_learn_005_m01",
+          "name": "Veggie Burger Deluxe",
+          "description": "Plant-based patty with lettuce, tomato, onion, pickles, and special sauce on a brioche bun",
+          "price": 195.00,
+          "category": "Burgers",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=400"
+        },
+        {
+          "item_id": "veg_learn_005_m02",
+          "name": "Sweet Potato Fries",
+          "description": "Crispy baked sweet potato fries with sea salt and a side of garlic aioli - perfect with code",
+          "price": 125.00,
+          "category": "Sides",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=400"
+        },
+        {
+          "item_id": "veg_learn_005_m03",
+          "name": "Mushroom Swiss Melt",
+          "description": "Sautéed mushrooms and Swiss cheese on grilled sourdough - comfort food for developers",
+          "price": 165.00,
+          "category": "Sandwiches",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=400"
+        }
+      ]
+    },
+    {
+      "id": "veg_learn_006",
+      "name": "Array of Flavors",
+      "rating": 4.9,
+      "cuisine": "Global Vegetarian",
+      "address": "987 Algorithm Alley, Logic City, 99001",
+      "delivery_time": "22-27 mins",
+      "image_url": "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800",
+      "menu": [
+        {
+          "item_id": "veg_learn_006_m01",
+          "name": "Thai Green Curry",
+          "description": "Coconut-based curry with eggplant, bell peppers, and Thai basil - map() function approved",
+          "price": 215.00,
+          "category": "Asian Fusion",
+          "is_vegetarian": true,
+          "is_spicy": true,
+          "image": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400"
+        },
+        {
+          "item_id": "veg_learn_006_m02",
+          "name": "Mexican Burrito Bowl",
+          "description": "Rice, black beans, corn, salsa, guacamole, and cheese in a bowl - array destructuring ready",
+          "price": 195.00,
+          "category": "Mexican Fusion",
+          "is_vegetarian": true,
+          "is_spicy": true,
+          "image": "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400"
+        },
+        {
+          "item_id": "veg_learn_006_m03",
+          "name": "Japanese Veggie Ramen",
+          "description": "Rich vegetable broth with noodles, mushrooms, bok choy, and soft-boiled egg - filter() method favorite",
+          "price": 225.00,
+          "category": "Asian Noodles",
+          "is_vegetarian": true,
+          "is_spicy": false,
+          "image": "https://images.unsplash.com/photo-1557872943-16a5ac26437e?w=400"
+        }
+      ]
+    }
+  ]
+}

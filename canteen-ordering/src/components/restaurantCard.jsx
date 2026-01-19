@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// Completely free images for educational/learning purposes only
+// 🎯 ALL IMAGES FROM UNSPLASH.COM - FREE FOR PERSONAL & COMMERCIAL USE (https://unsplash.com/license)
+// 📚 PURE VEGETARIAN FOOD IMAGES ONLY - Fictional content for React/Redux learning
 export const dummyImage = [
-  "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800", // 🍕 Margherita Pizza
-  "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800", // 🍛 Chicken Tikka Masala
-  "https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=800", // 🍝 Creamy Fettuccine
-  "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=800", // 🍱 California Roll
-  "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=800", // 🌮 Beef Tacos
-  "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800", // 🥗 Mediterranean Bowl
-  "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800", // 🥗 Fresh Garden Salad
-  "https://images.unsplash.com/photo-1603894584373-5ac82b2ae391?w=800", // 🍗 Butter Chicken
-  "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800", // 🍔 Classic Cheeseburger
-  "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800", // 🍨 Strawberry Milkshake
+  "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800", // 🥗 Buddha Bowl - pure veg
+  "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800", // 🥗 Green Garden Salad - pure veg
+  "https://images.unsplash.com/photo-1603894584373-5ac82b2ae391?w=800", // 🍛 Paneer Butter Masala - pure veg
+  "https://images.unsplash.com/photo-1639024471283-03518883512d?w=800", // 🥟 Idli Sambar - pure veg
+  "https://images.unsplash.com/photo-1563379091339-03246963d4ad?w=800", // 🍚 Vegetable Biryani - pure veg
+  "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800", // 🫘 Chana Masala - pure veg
+  "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?w=800", // 🥑 Avocado Toast - pure veg
+  "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800", // 🧀 Caprese Salad - pure veg
+  "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=800", // 🍓 Fresh Fruit Bowl - pure veg
+  "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800", // 🥟 Vada Pav - pure veg
+  "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=800", // 🍕 Vegetarian Pizza - pure veg
+  "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=800", // 🍔 Veggie Burger - pure veg
+  "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800", // 🥙 Falafel Wrap - pure veg
+  "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=800", // 🥗 Mixed Salad - pure veg
+  "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=800"  // 🥤 Smoothie Bowl - pure veg
 ];
 
 const RestaurantCard = ({ data }) => {

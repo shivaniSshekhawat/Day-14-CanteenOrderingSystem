@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useGetResaturantData } from "../Hooks";
-import { dummyImage } from "../components/RestaurantCard";
+import { dummyImage } from "../components/restaurantCard";
 import { addItemsInCart } from "../Store/app";
 
 // Toast Component positioned under cart
@@ -31,12 +31,20 @@ const RestaurantDetails = () => {
   const restaurantData = allRestaurantData.find((data) => data.id === id);
 
   // Calculate total cart items
-  const totalCartItems = cartData?.reduce((total, restaurant) => {
-    return total + restaurant.menuItems.reduce((sum, item) => sum + item.quantity, 0);
-  }, 0) || 0;
+  const totalCartItems =
+    cartData?.reduce((total, restaurant) => {
+      return (
+        total +
+        restaurant.menuItems.reduce((sum, item) => sum + item.quantity, 0)
+      );
+    }, 0) || 0;
 
   const [imageUri, setImageUri] = useState(() => {
-    return restaurantData?.image_url || dummyImage[0] || "https://picsum.photos/800/600?random=fallback";
+    return (
+      restaurantData?.image_url ||
+      dummyImage[0] ||
+      "https://picsum.photos/800/600?random=fallback"
+    );
   });
 
   // Toast state
@@ -87,12 +95,34 @@ const RestaurantDetails = () => {
             </button>
             {totalCartItems > 0 && (
               <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-400 to-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-lg border-2 border-white animate-pulse z-20">
-                {totalCartItems > 99 ? '99+' : totalCartItems}
+                {totalCartItems > 99 ? "99+" : totalCartItems}
               </span>
             )}
           </Link>
         </div>
       </nav>
+
+      {/* Educational Banner */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-200">
+        <div className="max-w-6xl mx-auto px-5 py-3">
+          <div className="flex items-center justify-center gap-4 text-sm text-blue-700">
+            <span className="flex items-center gap-1">
+              <span className="text-lg">📚</span>
+              <span className="font-medium">Learning Project</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-1">
+              <span className="text-lg">🖼️</span>
+              <span>Images: Unsplash Free License</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-1">
+              <span className="text-lg">🎯</span>
+              <span>100% Fictional Content</span>
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Restaurant Header */}
       <div className="max-w-6xl mx-auto mt-6 bg-white rounded-xl shadow-md overflow-hidden">
@@ -129,7 +159,7 @@ const RestaurantDetails = () => {
               key={item.item_id}
               className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300"
             >
-              <div className="flex gap-4 p-4">
+              <div className="flex flex-col gap-4 p-4">
                 {/* Food Image */}
                 <img
                   src={item.image}
@@ -138,11 +168,11 @@ const RestaurantDetails = () => {
                     const idx = Math.floor(Math.random() * dummyImage.length);
                     e.target.src = dummyImage[idx];
                   }}
-                  className="w-28 h-24 object-cover rounded-lg"
+                  className="w-full h-32 object-cover rounded-lg"
                 />
 
                 {/* Content */}
-                <div className="flex flex-col justify-between w-full">
+                <div className="flex flex-col gap-3">
                   <div>
                     <h4 className="font-semibold text-gray-800 text-lg">
                       {item.name}

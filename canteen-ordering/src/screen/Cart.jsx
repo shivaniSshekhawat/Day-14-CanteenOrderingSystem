@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addItemsInCart, deleteItemsInCart } from "../Store/app";
-import { dummyImage } from "./components/restaurantCard";
+import { dummyImage } from "../components/restaurantCard";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -48,7 +48,9 @@ const Cart = () => {
           <div className="flex items-center space-x-2 relative">
             <span className="text-white font-medium">Cart</span>
             <div className="relative">
-              <span className="text-2xl relative z-10 text-white bg-transparent">🛒</span>
+              <span className="text-2xl relative z-10 text-white bg-transparent">
+                🛒
+              </span>
               {totalCartItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-gradient-to-r from-red-400 to-pink-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-lg border-2 border-slate-900 animate-pulse z-20">
                   {totalCartItems > 99 ? "99+" : totalCartItems}
@@ -58,6 +60,28 @@ const Cart = () => {
           </div>
         </div>
       </nav>
+
+      {/* Educational Banner */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-200">
+        <div className="max-w-6xl mx-auto px-5 py-3">
+          <div className="flex items-center justify-center gap-4 text-sm text-blue-700">
+            <span className="flex items-center gap-1">
+              <span className="text-lg">📚</span>
+              <span className="font-medium">Learning Project</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-1">
+              <span className="text-lg">🖼️</span>
+              <span>Images: Unsplash Free License</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-1">
+              <span className="text-lg">🎯</span>
+              <span>100% Fictional Content</span>
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Cart Content */}
       {!cartData || cartData.length === 0 ? (
@@ -127,10 +151,12 @@ const Cart = () => {
               {/* CTA Button */}
               <Link
                 to="/"
-                className="inline-flex items-center space-x-3 bg-white hover:bg-gray-50 px-8 py-4 rounded-2xl font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl border-2 border-gray-200"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-700 px-8 py-4 rounded-2xl font-bold text-lg md:text-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl border-2 border-blue-400 text-white"
               >
                 <span className="text-2xl">🍽️</span>
-                <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent">Explore Amazing Restaurants</span>
+                <span className="text-white">
+                  Explore Amazing Restaurants
+                </span>
                 <span className="text-xl">→</span>
               </Link>
 
@@ -156,10 +182,12 @@ const Cart = () => {
                   <div className="flex gap-3 p-4 border-b">
                     <img
                       src={restaurant.restaurantDetails.image_url}
-                      className="w-20 h-20 object-cover rounded-lg"
+                      className="w-full h-24 object-cover rounded-lg"
                       alt=""
                       onError={(e) => {
-                        const idx = Math.floor(Math.random() * dummyImage.length);
+                        const idx = Math.floor(
+                          Math.random() * dummyImage.length,
+                        );
                         e.target.src = dummyImage[idx];
                       }}
                     />
@@ -186,10 +214,12 @@ const Cart = () => {
                         <div className="flex gap-3">
                           <img
                             src={item.image}
-                            className="w-16 h-16 rounded-lg object-cover"
+                            className="w-full h-20 rounded-lg object-cover"
                             alt=""
                             onError={(e) => {
-                              const idx = Math.floor(Math.random() * dummyImage.length);
+                              const idx = Math.floor(
+                                Math.random() * dummyImage.length,
+                              );
                               e.target.src = dummyImage[idx];
                             }}
                           />
@@ -268,8 +298,10 @@ const Cart = () => {
                 </div>
               </div>
 
-              <button className="mt-5 w-full bg-white hover:bg-gray-50 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-gray-200">
-                <span className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent">Proceed to Checkout</span>
+              <button className="mt-5 w-full bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 hover:from-blue-600 hover:via-blue-700 hover:to-indigo-700 py-4 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border-2 border-blue-400 text-white">
+                <span className="text-white">
+                  Proceed to Checkout
+                </span>
               </button>
             </div>
           </div>

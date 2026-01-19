@@ -2,7 +2,7 @@ import React from "react";
 import { useGetResaturantData } from "../Hooks";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import RestaurantCard from "../components/RestaurantCard";
+import RestaurantCard from "../components/restaurantCard";
 
 const Home = () => {
   useGetResaturantData();
@@ -35,6 +35,28 @@ const Home = () => {
           </Link>
         </div>
       </nav>
+
+      {/* Educational Banner */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-blue-200">
+        <div className="max-w-6xl mx-auto px-5 py-3">
+          <div className="flex items-center justify-center gap-4 text-sm text-blue-700">
+            <span className="flex items-center gap-1">
+              <span className="text-lg">📚</span>
+              <span className="font-medium">Learning Project</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-1">
+              <span className="text-lg">🖼️</span>
+              <span>Images: Unsplash Free License</span>
+            </span>
+            <span className="text-blue-400">•</span>
+            <span className="flex items-center gap-1">
+              <span className="text-lg">🎯</span>
+              <span>100% Fictional Content</span>
+            </span>
+          </div>
+        </div>
+      </div>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-5 py-8">
