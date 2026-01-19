@@ -1,7 +1,7 @@
 
 import React from "react";
 import Home from "./screen/Home";
-import RestaurantDetails from "./screen/RestaurantDetails";
+import RestaurantDetails from "./screen/restaurantDetails";
 import Cart from "./screen/Cart";
 import { Routes, Route } from "react-router-dom";
 
